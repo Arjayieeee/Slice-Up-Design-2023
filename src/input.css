@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem ;
+}
+html{
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+
+@layer components{
+
+    .blurry.show{
+        @apply  w-[100%] ease-linear duration-300
+    }
+
+    .mainheader .search input textarea{
+        @apply pl-[2rem]
+    }
+    .mainheader .headernav{
+        @apply   right-[-20rem] top-[0rem] bg-white w-[60%] h-[100vh] pt-[8rem] ease-in duration-[300ms]  lg:pt-0 lg:static lg:w-[100%] lg:h-0;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .mainheader .headernav.open{
+        @apply right-0 ease-in duration-[300ms] 
+    }
+    .mainheader ul{
+        @apply lg:flex lg:items-center lg:justify-center lg:gap-[1.6rem] 
+    }
+    .mainheader ul li{
+        @apply py-[1rem] 
+    }
+    .mainheader ul li a{
+        @apply font-medium ml-[1rem] lg:text-[1.2rem] lg:font-normal
+    }
+    .mainheader .toggle__menu{
+        @apply absolute right-[1rem] top-[7rem]
+    }
+    .mainheader .toggle__menu span{
+        content:"";
+        display: block;
+        height: .35rem;
+        width:2.2rem;
+        background-color: black;
+        border-radius:1rem;
+    }
+    .mainheader .toggle__menu span:nth-child(2){
+        @apply my-[.2rem] 
+    }
+    .mainheader .toggle__menu.open span:nth-child(2){
+        @apply  opacity-0
+    }
+    .toggle__menu.open span:first-child{
+        @apply rotate-[-55deg] w-[1.7rem]  translate-y-[.4rem] translate-x-[-.2rem] ease-in duration-[300ms]
+    }
+    .toggle__menu.open span:last-child{
+        @apply rotate-[55deg] w-[1.7rem] translate-y-[-.7rem] translate-x-[-.2rem] ease-in duration-[300ms]
+    }
+    .toggle__menu.open{
+        @apply fixed rotate-[180deg] ease-in duration-[300ms] right-[1.5rem]
+    }
+
+    
+
+    /* -----Bannner----- */
+
+    .banner .card .card__box{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        @apply lg:w-[20rem]
+    }
+    .banner .card .progress{
+        @apply py-[.5rem]
+    }
+    .banner .card .progress .bar{
+        display:block;
+        height: .5rem;
+        width: 100%;
+        background-color: #f6f6f6;
+        border-radius: 2rem;
+    }
+    .banner .card .progress .bar span{
+        position:relative;
+        display:block;
+        height: 100%;
+        width:40%;
+        background-color:green;
+        border-radius: 2rem;
+    }
+
+    /*DL RESOURCES */
+    .downloadresources .kickstart{
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+   
+  /*FOOTER */
+
+    .footer ul li a{
+        @apply text-primary font-bold
+    }
+    .footer .sub__menu p{
+        @apply text-[#464E5B]
+    }
+}
